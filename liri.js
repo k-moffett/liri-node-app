@@ -1,6 +1,8 @@
 require("dotenv").config();
+let keys = require("./keys.js");
 
-var spotify = new Spotify(keys.spotify);
-var client = new Twitter(keys.twitter);
+let spotify = keys.spotify;
+let client = keys.twitter;
 
-//on #9
+console.log(spotify)
+console.log(client)
