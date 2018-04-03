@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/moffkr91/liri-node-app#readme",
   "dependencies": {
+    "axios": "^0.18.0",
+    "btoa": "^1.2.1",
     "dotenv": "^5.0.1",
     "node-spotify-api": "^1.0.7",
     "request": "^2.85.0",
