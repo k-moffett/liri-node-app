@@ -22,12 +22,11 @@ if (command === 'spotify-this-song') {
         let preview = JSON.stringify(data.tracks.items[0].preview_url)
         let album = JSON.stringify(data.tracks.items[0].album.name)
 
-        console.log(artist)
-        console.log(track_name)
-        console.log(preview)
-        console.log(album)
-
-       
+        console.log('Artist: '+artist)
+        console.log('Song Title: '+track_name)
+        console.log('Song Preview: '+preview)
+        console.log('Album Title: '+album)
+   
     })
 
 
