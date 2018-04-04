@@ -24,7 +24,6 @@ if (command === 'spotify-this-song') {
 
         fs.writeFile('./spotify_songz.txt', 'Artist: '+artist+' Song Title: '+track_name+' Song Preview: '+preview+' Album Title: '+album, (err) => {
             if (err) throw err;
-            console.log('The file has been saved!');
           });
 
         fs.readFile('./spotify_songz.txt', (err, data) => {
