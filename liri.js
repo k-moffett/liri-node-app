@@ -22,10 +22,15 @@ if (command === 'spotify-this-song') {
         let preview = JSON.stringify(data.tracks.items[0].preview_url)
         let album = JSON.stringify(data.tracks.items[0].album.name)
 
-        console.log('Artist: '+artist)
-        console.log('Song Title: '+track_name)
-        console.log('Song Preview: '+preview)
-        console.log('Album Title: '+album)
+        fs.writeFile('./spotify_songz.txt', 'Artist: '+artist+' Song Title: '+track_name+' Song Preview: '+preview+' Album Title: '+album, (err) => {
+            if (err) throw err;
+            console.log('The file has been saved!');
+          });
+
+        fs.readFile('./spotify_songz.txt', (err, data) => {
+            if (err) throw err;
+            console.log(data.toString('utf-8'));
+          });
    
     })
 
