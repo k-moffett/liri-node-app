@@ -12,20 +12,23 @@ let  spotify = new Spotify({
   });
 
 if (command === 'spotify-this-song') {
-    spotify.search({ type: 'track', query: input, limit:1 }, function(err, data) {
+    spotify.search({ type: 'track', query: input, limit: 1 }, function(err, data) {
         if (err) {
           return console.log('Error occurred: ' + err);
         }
 
-        let track_string = JSON.stringify(data.tracks.items)
-        let track_obj = JSON.parse(track_string)
-        
-        fs.writeFile('./spotify_string.txt', track_string, 'utf8', (error) => {
-            if (error){
-            console.log(error)
-            throw "NOPE"
-            }
-        })
+        let artist = JSON.stringify(data.tracks.items[0].artists[0].name)
+        let track_name = JSON.stringify(data.tracks.items[0].name)
+        let preview = JSON.stringify(data.tracks.items[0].preview_url)
+        let album = JSON.stringify(data.tracks.items[0].album.name)
+
+        console.log(artist)
+        console.log(track_name)
+        console.log(preview)
+        console.log(album)
+
        
     })
+
+
 }
