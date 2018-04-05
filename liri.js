@@ -5,10 +5,9 @@ let keys = require('./keys.js');
 let fs = require('fs')
 let Spotify = require('node-spotify-api');
 
-let spot_keys = keys.spotify;
 let  spotify = new Spotify({
-    id: spot_keys.id,
-    secret: spot_keys.secret,
+    id: keys.spotify.id,
+    secret: keys.spotify.secret,
   });
 
 if (command === 'spotify-this-song') {
@@ -16,7 +15,6 @@ if (command === 'spotify-this-song') {
         if (err) {
           return console.log('Error occurred: ' + err);
         }
-
         let artist = JSON.stringify(data.tracks.items[0].artists[0].name)
         let track_name = JSON.stringify(data.tracks.items[0].name)
         let preview = JSON.stringify(data.tracks.items[0].preview_url)
@@ -29,9 +27,10 @@ if (command === 'spotify-this-song') {
         fs.readFile('./spotify_songz.txt', (err, data) => {
             if (err) throw err;
             console.log(data.toString('utf-8'));
-          });
-   
+          });  
     })
+}
 
+if (command === 'movie-this') {
 
 }

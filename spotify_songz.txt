@@ -1,1 +1,1 @@
-Artist: "Frank Zappa" Song Title: "My Guitar Wants To Kill Your Mama" Song Preview: null Album Title: "Weasels Ripped My Flesh"
+Artist: "Michael Jackson" Song Title: "Billie Jean" Song Preview: "https://p.scdn.co/mp3-preview/4eb779428d40d579f14d12a9daf98fc66c7d0be4?cid=566f4cd134c9414ab2bb779f0f756a54" Album Title: "Thriller 25 Super Deluxe Edition"
