@@ -1,10 +1,15 @@
 require('dotenv').config();
 
-let [node, liri, command, input] = process.argv
+let [node, liri, command, ...input] = process.argv
 let keys = require('./keys.js');
 let fs = require('fs')
 let Spotify = require('node-spotify-api');
-
+const OmdbApi = require('omdb-api-pt')
+//const omdb = new OmdbApi({
+//  apiKey: keys.omdb.key,
+//  baseUrl: 'https://omdbapi.com/',
+//})
+//console.log(ombd)
 let  spotify = new Spotify({
     id: keys.spotify.id,
     secret: keys.spotify.secret,
