@@ -1,11 +1,2 @@
 spotify-this-song,"I Want it That Way"
 
-spotify.search({ type: 'track', query: input, limit:1 }, function(err, data) {
-        if (err) {
-          return console.log('Error occurred: ' + err);
-        }
-
-        let artist_name = JSON.stringify(data.tracks.items[0].artists)
-        console.log(JSON.parse(artist_name))
-       
-    })
