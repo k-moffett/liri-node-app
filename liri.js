@@ -31,13 +31,15 @@ if (command === 'movie-this') {
   request('http://www.omdbapi.com/?apikey=b9217a12&t='+input+'&r=json&plot=short&', function (error, response, body) {
   if (error) {console.log('error:', error)} 
   let movie_data = JSON.parse(body)
-  console.log('Title: '+movie_data.Title) 
-  console.log('Release Date: '+movie_data.Year)
-  console.log('IMDB Rating: '+movie_data.imdbRating)
-  console.log(movie_data.Ratings[1].Source+': '+movie_data.Ratings[1].Value)
-  console.log('Country Produced:'+movie_data.Production)
-  console.log('Language(s):'+movie_data.Language)
-  console.log('Plot:'+movie_data.Plot)
-  console.log('Actors:'+movie_data.Actors)
+  let final_data = 'Title:'+movie_data.Title+'\r\nRelease Date:'+movie_data.Year+'\r\nIMDB Rating:'+movie_data.imdbRating+'\r\n'+movie_data.Ratings[1].Source+':'+movie_data.Ratings[1].Value+'\r\nCountry Produced:'+movie_data.Production+'\r\nLanguage(s):'+movie_data.Language+'\r\nPlot:'+movie_data.Plot+'\r\nActors:'+movie_data.Actors
+  
+  fs.writeFile('./omdb.txt', final_data, (err) => {
+    if (err) throw err;
+    });
+
+  fs.readFile('./omdb.txt', (err, data) => {
+    if (err) throw err;
+    console.log(data.toString('utf-8'));
+    }); 
   });
 }
