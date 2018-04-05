@@ -21,7 +21,6 @@
     "dotenv": "^5.0.1",
     "geocoder": "^0.2.3",
     "node-spotify-api": "^1.0.7",
-    "omdb-api-pt": "^2.0.1",
     "request": "^2.85.0",
     "twitter": "^1.7.1"
   }
